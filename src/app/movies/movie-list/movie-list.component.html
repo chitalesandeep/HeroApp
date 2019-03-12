@@ -1,0 +1,13 @@
+
+<h4>List of Movies</h4>
+ <div>
+  <ul>
+      <li *ngFor="let movie of movielist"> 
+        Hero : {{movie.hero_id}} <br>
+        <b>Movie : {{movie.movie_name}} </b><br>
+        Released On: {{movie.released_on}}<br>
+        <h4>Likes:{{movie.Likes}} | Dislikes:{{movie.Dislikes}}</h4>
+        <app-voter (voted)="votecalculation($event,movie.id)"></app-voter>
+      </li>
+  </ul>
+</div>

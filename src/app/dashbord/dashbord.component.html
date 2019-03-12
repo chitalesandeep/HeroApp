@@ -1,0 +1,11 @@
+<div [ngClass]="'boldMe'">Top Heroes</div>
+<div class="grid grid-pad" >
+  <a *ngFor="let hero of heroes; index as i" class="col-1-4"  (click)="HeroMovieDetail(hero.id)">
+    <div class="module hero" [appHighlightMe]="'white'" [ngStyle]="{'background-color':'#5eadd3'}">
+      <h4>
+        <span>{{i + 1}} : {{hero.name}}</span> 
+      </h4>
+    </div>
+  </a>
+</div>
+<app-hero-information></app-hero-information>

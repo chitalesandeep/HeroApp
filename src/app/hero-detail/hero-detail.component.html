@@ -1,0 +1,11 @@
+<div *ngIf="hero">
+  <h2 [appHighlightMe]="'cyan'" >{{hero.name}} Details</h2>
+  <div>
+      Id : <span>{{hero.id}}</span><br>
+      DOB : <span>{{hero.dob}}</span>
+  </div>
+  <div>
+    label:<input type="text" [(ngModel)]="hero.name">
+  </div>
+</div>
+<span *ngIf="!hero">Please select hero</span>

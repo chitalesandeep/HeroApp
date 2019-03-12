@@ -1,0 +1,23 @@
+<p>
+  hero-information!
+</p>
+<div>
+  <ul>
+    <li *ngFor="let hero of heroData | moviefilter:filterId : 'id' ">
+      <div>Hero Id:{{hero.id}}</div>  
+      <div>Hero Name:{{hero.name}}</div>  
+      <div>Hero DOB:{{hero.dob}}</div>  
+    </li>
+  </ul>
+</div>
+<p>
+    Movies:
+</p>
+<div>
+    <ul> 
+      <li *ngFor="let movie of movies | moviefilter:filterId: 'hero_id' ">
+        <div>Movie Name:{{movie.movie_name}}</div>  
+        <div>Release On:{{movie.released_on}}</div>   
+      </li>
+    </ul>
+  </div>

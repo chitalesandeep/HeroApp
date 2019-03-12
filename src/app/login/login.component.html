@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="LoginForm">
+  <form #loginForm="ngForm" (ngSubmit)="goAhead(loginForm.value)">
+    <div class="form-group">
+        <label for="Username">User Name</label>
+        <input type="text" required class="form-control" [(ngModel)]="loginData.username" name="firstName" #firstName="ngModel">
+        <div class="alert alert-danger" *ngIf="firstName.touched && !firstName.valid">Please enter user name!.</div>
+    </div>
+
+    <div class="form-group">
+      <label for="Password"> Password</label>
+      <input type="text" required minlength="4" class="form-control" [(ngModel)]="loginData.password" ngModel name="passWord" #passWord="ngModel">
+      <div class="alert alert-danger" *ngIf="passWord.touched && !passWord.valid">
+        <div class="alert alert-danger" *ngIf="passWord.errors.required">Please enter password.</div>
+        <div class="alert alert-danger" *ngIf="passWord.errors.minlength">Password lenght should be {{passWord.errors.minlength.requiredLength}} characters.</div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary" [disabled]="!loginForm.valid">Submit</button>
+  </form>
+  </div>
+</div>
+

@@ -1,0 +1,20 @@
+
+<h4>List of Heroes</h4> <button name="AddHero" (click)="visibleForm=true">Add Hero</button>
+<div *ngIf="visibleForm">
+  <form name="hero" #heroForm="ngForm" (ngSubmit)="heroForm">
+      <div class="form-group">
+        <label for="Name"> Name: </label>
+        <input type="text" class="form-control" name="Name">  
+      </div>
+      <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div>
+  <ul>
+      <span *ngFor="let hero of heroes">
+      <li (click)="OnSelect(hero)"> {{hero.name}} </li>
+      </span>
+  </ul>
+</div>
+
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

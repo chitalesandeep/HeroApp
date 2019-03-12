@@ -1,0 +1,15 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<header>
+  <div class="AppTitle" style="text-align:center">
+     Welcome to {{ title }}!
+  </div>
+<nav>
+  <a routerLink="/home" (click)="menu='home'"><span [ngStyle]="{'color':menu == 'home'? 'black':'#039be5'}"> Dashboard </span></a>
+  <a routerLink="/heroes" (click)="menu='hero'"><span [ngStyle]="{'color':menu == 'hero'? 'black':'#039be5'}">Heroes</span></a>
+  <a routerLink="/movies" (click)="menu='movie'"><span [ngStyle]="{'color':menu == 'movie'? 'black':'#039be5'}">Movies</span></a>
+
+</nav>
+</header>
+<main>
+<router-outlet></router-outlet>
+</main>
